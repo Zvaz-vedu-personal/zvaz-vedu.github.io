@@ -154,6 +154,12 @@
   city: Plzeň
   link: https://sitport.cz
 
+- id: drylock
+  name: Drylock technologies
+  type: partner
+  city: Liberec
+  link: 'https://drylocktechnologies.com/cs/innovate-to-protect/'
+
 
 # Skrytí partneři (showOnPartnersPage: false)
 - id: british-embassy-prague

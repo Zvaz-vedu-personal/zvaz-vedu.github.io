@@ -1,4 +1,4 @@
----
+﻿---
 title: Zvaž vědu! Liberec
 layout: location
 
@@ -28,7 +28,8 @@ letacekLink: /pdf/ZV_Liberec_letak.pdf
 showHistory: false
 
 team: [áďa, honza, tomáš, michal]
-partners: [eserocz-cz, liberecky-kraj, tul, nadace-jablotron, nadace-preciosa]
+partners: [eserocz-cz, liberecky-kraj, tul, nadace-jablotron, nadace-preciosa, drylock]
+supporters: [linet]
 
 importantInfo: false
 program: true
@@ -37,4 +38,4 @@ abstracts: true
 abstractUrl: "/liberec/info/abstrakty"
 ---
 {{< program/liberec26 >}}
-
+
