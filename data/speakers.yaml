@@ -628,6 +628,8 @@
   locations: 
   - Plzeň
   bio: Kája je rodačka z Karlovarského kraje, studuje zdravotnické lyceum na SZŠ a VOŠZ Plzeň a má ráda kvalitní divadlo. Jednou by se chtěla uchýlit v oboru medicíny, kde bude šťastná, ať už jako lékařský či nelékařský pracovník. Chtěla by být pacientům záchytným bodem i nadějí toho, že vše bude v pořádku. Anebo, pokud jim už nijak pomoct nepůjde, být alespoň někým, kdo jim zajistí důstojné odcházení. Vědět je super věc a ačkoliv se to tak zprvu zdát nemusí, na akademické půdě se najde nespočet lidí, kteří jsou ochotni již středoškolským studentům chuť k poznání vědy přikrmit. Stačí mít pouze svou vlastní iniciativu, jít si za svým a nevzdávat to, když nastanou těžké časy. Častokrát se mohou podařit skvělé věci, které mohou jednou někomu zachránit život.
+  lectures:
+  - title: 'Experimentální rekonstrukce poranění žlučových cest s využitím decelularizované tkáně'
 
 - name: Jan Švec
   photo: "/media/imgs/speakers/jan-svec.webp"
@@ -887,13 +889,6 @@
   locations:
   - Liberec
   bio: Hanka je studentkou španělského gymnázia. Nejvíc ji baví hledat odpovědi na otázky, které na první pohled nemají jednoduché řešení. Zajímá se o obecnou relativitu, astrofyziku, kvantové technologie a kosmonautiku. Ve Slovenské akademii věd zkoumá kauzální strukturu sféricky symetrického časoprostoru. Zároveň pracuje ve firmě Spacemanic jako AIT inženýrka na vývoji a integraci družic. Ve volném čase ráda hraje na housle, jezdí na koni a střílí z luku.
-
-- name: Dan Biskup
-  photo: "/media/imgs/speakers/daniel-biskup.webp"
-  locations:
-  - Praha
-  - Liberec
-  bio: Dana odmalička zajímá vesmír. Prošel výběrovým řízením Zero-G, díky kterému zažil stav beztíže a dostal se do komunity velmi inspirativních lidí. Zažil v rámci české výpravy start rakety SLS na misi Artemis II a to ho pouze utvrdilo v jeho životním snu - stát se astronautem. O vesmíru přednáší na školách, veřejných akcích a v tomto oboru se dál vzdělává, třeba i formou stáží na Akademii věd ČR. Aktivně běhá, leze, plave, cestuje a miluje adrenalinové výzvy.
 
 - name: Václav Šustr
   photo: "/media/imgs/speakers/vaclav-sustr.webp"

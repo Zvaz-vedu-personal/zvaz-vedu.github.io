@@ -16,7 +16,8 @@ Pokud chcete skrýt např. program, stačí smazat klíč `program: true`, a tak
 - `importantInfo: true`: Zapne informační zónu se zajímavým textem a galerií. Vyžaduje `importantInfoHeader` a `importantInfoText`.
 - `additionalInfo: true`: Zapne "O projektu a akci", "Kamarády s sebou!" a blok nabídek "Na co se můžeš těšit". Lze použít jako prosté `true` (zobrazí všech 6 výchozích boxů), nebo rozšířit do podrobné konfigurace pro přidání, odebrání a úpravu boxů (viz níže).
 - `showHistory: true`: (Dříve `pastActions`). Zobrazí na spodku stránky historii všech minulých ročníků v daném městě (Ohlédnutí). 
-- `team` a `partners`: Pole týmů a partnerů, načítá data a obrázky ze statických složek.
+- `team`: Pole ID členů týmu z `data/team.yaml`.
+- `partners` a `supporters`: Nastavení partnerů a podporovatelů pro dané město (podrobněji níže).
 
 ### Systém informačních boxů nabídek (`additionalInfo`)
 Výchozí karty pro sekci „Na co se na Zvaž vědu! můžeš těšit?“ jsou vestavěny přímo v šabloně. K dispozici jsou výchozí boxy:
@@ -58,6 +59,36 @@ additionalInfo:
     - networking
 ```
 Číslování boxů (01, 02, 03...) se vždy dopočítává automaticky podle konečného pořadí v gridu.
+
+### Systém partnerů a podporovatelů (`partners` a `supporters`)
+Na stránkách měst (`_index.md`) se loga partnerů zobrazují ve dvou sekcích:
+- **Partneři** (`#partners`, třída `.partner-logo-img`, výška 120 px)
+- **Podporovatelé** (`#supporters`, třída `.supporter-logo-img`, výška 80 px)
+
+Systém podporuje tři způsoby použití:
+
+1. **Výchozí (zpětně kompatibilní) režim:**
+   V `_index.md` uvedete pouze `partners: [id1, id2, ...]`, případně parametr vynecháte (pak se hledá podle města). V tomto režimu se subjekty automaticky rozdělují podle pole `type` v `data/partners.yaml`:
+   - `generalni-partner`, `hlavni-partner`, `partner` &rarr; sekce **Partneři**
+   - `podporovatel` &rarr; sekce **Podporovatelé**
+
+2. **Zrušení rozdělování (všichni do Partneři, sekce Podporovatelé skrytá):**
+   Pokud nechcete subjekty rozdělovat na dvě sekce, nastavte `supporters: false` (nebo `supporters: []`):
+   ```yaml
+   partners: [plzensky-kraj-cz, fav-zcu-cz, eserocz-cz, radovanek-cz]
+   supporters: false
+   ```
+   Všechny uvedené subjekty (i ty, které mají v `data/partners.yaml` nastaveno `type: podporovatel`) se zobrazí v sekci **Partneři** a sekce **Podporovatelé** se nezobrazí vůbec.
+
+3. **Vlastní rozdělení do obou sekcí:**
+   Do `partners` uveďte subjekty pro hlavní sekci a do `supporters` subjekty pro druhou sekci:
+   ```yaml
+   partners: [plzensky-kraj-cz, fav-zcu-cz, kooperativa]
+   supporters: [radovanek-cz, sit-port]
+   ```
+   Každý subjekt bude zařazen přesně do té sekce, ve které je uveden, v přesném pořadí zápisu a bez ohledu na výchozí `type` v `data/partners.yaml`.
+
+*Poznámka: Jako alias pro `supporters` lze v hlavičce použít i klíč `sponsors`. Samostatná stránka `/partneri` není tímto nijak dotčena (řídí se nadále globálními daty).*
 
 ### Systém Bento Boxů (horní dlaždice)
 Využijte parametr `bentoBoxes: [id_boxu, id_boxu, id_boxu]` v souboru `_index.md`.

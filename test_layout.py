@@ -7,10 +7,10 @@ URLS = [
     "http://localhost:1313/",
     "http://localhost:1313/brno/",
     "http://localhost:1313/praha/",
+    "http://localhost:1313/liberec/",
+    "http://localhost:1313/partneri/",
     "http://localhost:1313/o-nas/",
     "http://localhost:1313/kontakt/",
-    "http://localhost:1313/podporovatele/",
-    "http://localhost:1313/famelab/"
 ]
 
 # Testujeme šířky po 50px krocích pro velmi jemnou síť od 320 do 1200

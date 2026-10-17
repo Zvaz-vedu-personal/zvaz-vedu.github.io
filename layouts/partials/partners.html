@@ -1,40 +1,82 @@
 {{/* 1. Extrakce parametrů */}}
 {{ $currentCity := trim (replace .Title "Zvaž vědu!" "") " " }}
 {{ $allPartners := $.Site.Data.partners }}
-{{ $partnerIds := default slice .Params.partners }}
 
-{{/* 2. Příprava kolekcí pro zobrazení */}}
+{{/* 2. Detekce přepsání sekcí přes dedikovaný list (supporters / sponsors) */}}
+{{ $hasSupportersOverride := or (isset .Params "supporters") (isset .Params "sponsors") }}
+
 {{ $partnersList := slice }}
 {{ $supportersList := slice }}
 
-{{ range $allPartners }}
-    {{ $partnerObj := . }}
-    {{ $isVisible := (ne $partnerObj.showOnPartnersPage false) }}
-    {{ $isLocationMatch := false }}
-    
-    {{/* 3. Logika: pokud má stránka definované partners: [id1, id2], použijeme přesně je */}}
-    {{ if gt (len $partnerIds) 0 }}
+{{ if $hasSupportersOverride }}
+    {{/* --- NOVÝ REŽIM S OVERRIDE --- */}}
+    {{ $supportersRaw := false }}
+    {{ if isset .Params "supporters" }}
+        {{ $supportersRaw = .Params.supporters }}
+    {{ else if isset .Params "sponsors" }}
+        {{ $supportersRaw = .Params.sponsors }}
+    {{ end }}
+
+    {{/* 1. Hlavní sekce Partneři: naplníme z .Params.partners v přesném pořadí */}}
+    {{ $isPartnersEnabled := and (ne .Params.partners false) (ne .Params.partners "false") }}
+    {{ if $isPartnersEnabled }}
+        {{ $partnerIds := default slice .Params.partners }}
         {{ range $pid := $partnerIds }}
-            {{ if eq $pid $partnerObj.id }}
-                {{ $isLocationMatch = true }}
+            {{ range $allPartners }}
+                {{ if eq .id $pid }}
+                    {{ $partnersList = $partnersList | append . }}
+                {{ end }}
             {{ end }}
-        {{ end }}
-    {{ else }}
-        {{/* 4. Fallback pro starší stránky: hledání názvu města v textovém řetězci .city */}}
-        {{ if in (print $partnerObj.city) $currentCity }}
-            {{ $isLocationMatch = true }}
         {{ end }}
     {{ end }}
 
-    {{ if and $isLocationMatch $isVisible }}
+    {{/* 2. Druhá sekce Podporovatelé: naplníme z parametru supporters/sponsors v přesném pořadí */}}
+    {{/* Pokud je hodnota false nebo prázdný seznam [], $supportersList zůstane prázdný */}}
+    {{ $isSupportersEnabled := and (ne $supportersRaw false) (ne $supportersRaw "false") }}
+    {{ if $isSupportersEnabled }}
+        {{ $supporterIds := default slice $supportersRaw }}
+        {{ if gt (len $supporterIds) 0 }}
+            {{ range $sid := $supporterIds }}
+                {{ range $allPartners }}
+                    {{ if eq .id $sid }}
+                        {{ $supportersList = $supportersList | append . }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+{{ else }}
+    {{/* --- PŮVODNÍ ZPĚTNĚ KOMPATIBILNÍ REŽIM --- */}}
+    {{ $partnerIds := default slice .Params.partners }}
+    {{ range $allPartners }}
+        {{ $partnerObj := . }}
+        {{ $isVisible := (ne $partnerObj.showOnPartnersPage false) }}
+        {{ $isLocationMatch := false }}
         
-        {{/* Očistíme .type od neviditelných mezer a sjednotíme na malá písmena */}}
-        {{ $type := lower (trim .type " ") }}
-        
-        {{ if or (eq $type "generalni-partner") (eq $type "hlavni-partner") (eq $type "partner") }}
-            {{ $partnersList = $partnersList | append . }}
-        {{ else if eq $type "podporovatel" }}
-            {{ $supportersList = $supportersList | append . }}
+        {{/* 3. Logika: pokud má stránka definované partners: [id1, id2], použijeme přesně je */}}
+        {{ if gt (len $partnerIds) 0 }}
+            {{ range $pid := $partnerIds }}
+                {{ if eq $pid $partnerObj.id }}
+                    {{ $isLocationMatch = true }}
+                {{ end }}
+            {{ end }}
+        {{ else }}
+            {{/* 4. Fallback pro starší stránky: hledání názvu města v textovém řetězci .city */}}
+            {{ if in (print $partnerObj.city) $currentCity }}
+                {{ $isLocationMatch = true }}
+            {{ end }}
+        {{ end }}
+
+        {{ if and $isLocationMatch $isVisible }}
+            {{/* Očistíme .type od neviditelných mezer a sjednotíme na malá písmena */}}
+            {{ $type := lower (trim .type " ") }}
+            
+            {{ if or (eq $type "generalni-partner") (eq $type "hlavni-partner") (eq $type "partner") }}
+                {{ $partnersList = $partnersList | append . }}
+            {{ else if eq $type "podporovatel" }}
+                {{ $supportersList = $supportersList | append . }}
+            {{ end }}
         {{ end }}
     {{ end }}
 {{ end }}
