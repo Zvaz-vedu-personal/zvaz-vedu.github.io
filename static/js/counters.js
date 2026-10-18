@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     fillElement.classList.remove('registration-full-pulse');
                     
                     textElement.style.fontWeight = 'bold';
-                    textElement.style.color = 'white';
+                    textElement.style.color = '';
                     textElement.style.justifyContent = 'flex-end';
                     textElement.style.left = 'auto';
                     textElement.style.right = '15px';
