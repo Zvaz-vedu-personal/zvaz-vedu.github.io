@@ -358,93 +358,128 @@ footer .layout-content {
     transform: rotate(-2deg);
 }
 
-#partners .layout-content{
+#partners .layout-content,
+#supporters .layout-content {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 1rem;
-    background-color: var(--primary);
-    padding: var(--inspacer);
-    color: var(--black-zv);
-}
-
-#supporters .layout-content{
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
     background-color: var(--primary);
     padding: var(--inspacer);
     color: var(--black-zv);
 }
 
 .partner-body {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
-    align-items: center;
-    justify-items: center;
-    width: 100%;
-}
-
-.partner-body a {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 2rem 2.5rem;
     width: 100%;
 }
 
-.partner-logo-img {
-    height: 120px; 
-    width: auto; 
-    object-fit: contain; 
-    max-width: min(25vw, 85%);
-    transition: var(--transition);
-}
-.supporter-logo-img {
-    height: 80px; 
-    width: auto; 
-    object-fit: contain; 
-    max-width: min(25vw, 85%);
-    transition: var(--transition);
-}
-.partner-body a {
+.partner-body .partner-link {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+}
+
+/* Partneři - hlavní úroveň */
+#partners .partner-link {
+    flex: 0 1 calc(25% - 2.5rem);
+    min-width: 180px;
+    max-width: 220px;
+    height: 65px;
+}
+
+/* Podporovatelé - hierarchicky menší úroveň */
+#supporters .partner-link {
+    flex: 0 1 calc(20% - 2.5rem);
+    min-width: 140px;
+    max-width: 170px;
+    height: 48px;
+}
+
+.partner-logo-img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.supporter-logo-img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: var(--transition);
 }
 
 /* 1. Hide the white version (2nd image) by default */
-.partner-logo-img:nth-of-type(2), .supporter-logo-img:nth-of-type(2) {
+.partner-logo-img:nth-of-type(2), 
+.supporter-logo-img:nth-of-type(2) {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
+    pointer-events: none;
 }
 
 /* 2. On hover of the link, swap visibility smoothly */
-.partner-body a:hover .partner-logo-img:nth-of-type(1),
-.partner-body a:hover .supporter-logo-img:nth-of-type(1) {
+.partner-body .partner-link:hover .partner-logo-img:nth-of-type(1),
+.partner-body .partner-link:hover .supporter-logo-img:nth-of-type(1) {
     opacity: 0;
 }
 
-.partner-body a:hover .partner-logo-img:nth-of-type(2),
-.partner-body a:hover .supporter-logo-img:nth-of-type(2) {
+.partner-body .partner-link:hover .partner-logo-img:nth-of-type(2),
+.partner-body .partner-link:hover .supporter-logo-img:nth-of-type(2) {
     opacity: 1;
 }
 
 @media (max-width: 900px) {
-    .partner-logo-img {
-        /* Slightly smaller height for mobile screens */
-        height: 40px;
-        max-width: 80%;
+    .partner-body {
+        gap: 1.5rem 2rem;
     }
-    .supporter-logo-img {
-        /* Slightly smaller height for mobile screens */
-        height: 30px;
-        max-width: 60%;
+    #partners .partner-link {
+        flex: 0 1 calc(33.333% - 2rem);
+        min-width: 140px;
+        max-width: 180px;
+        height: 52px;
+    }
+    #supporters .partner-link {
+        flex: 0 1 calc(33.333% - 2rem);
+        min-width: 120px;
+        max-width: 150px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 500px) {
+    #partners .layout-content,
+    #supporters .layout-content {
+        padding: 1.5rem 1rem;
+    }
+    .partner-body {
+        gap: 1.25rem 1rem;
+    }
+    #partners .partner-link {
+        flex: 0 1 calc(50% - 1rem);
+        min-width: 110px;
+        max-width: 145px;
+        height: 44px;
+    }
+    #supporters .partner-link {
+        flex: 0 1 calc(50% - 1rem);
+        min-width: 95px;
+        max-width: 130px;
+        height: 36px;
     }
 }
 /* HEADER */

@@ -28,7 +28,7 @@ letacekLink: /pdf/ZV_Liberec_letak.pdf
 showHistory: false
 
 team: [áďa, honza, tomáš, michal]
-partners: [eserocz-cz, liberecky-kraj, tul, nadace-jablotron, nadace-preciosa, drylock]
+partners: [tul, liberecky-kraj, nadace-jablotron, nadace-preciosa, drylock, eserocz-cz]
 supporters: [linet]
 
 importantInfo: false
