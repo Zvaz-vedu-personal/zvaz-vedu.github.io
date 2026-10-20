@@ -48,27 +48,60 @@ def process_file_content(content: str) -> str:
     # 4. Protect raw URLs (http:// or https://)
     content = re.sub(r'(https?://[^\s"\'<>)]+)', add_placeholder, content)
 
-    # 5. Protect markdown link destinations: [text](URL)
+    # 5. Protect markdown link destinations: [text](URL) and ![alt](URL)
     def protect_link_target(m):
         idx = len(placeholders)
         placeholders.append(m.group(2))
         return f"{m.group(1)}(__SAFE_PLACEHOLDER_{idx}__)"
-    content = re.sub(r'(\[[^\]]*\])\(([^)]+)\)', protect_link_target, content)
+    content = re.sub(r'(!?\[[^\]]*\])\(([^)]+)\)', protect_link_target, content)
 
     # 6. Protect HTML tags (<tag ...>)
     content = re.sub(r'(</?[a-zA-Z][^>]*>)', add_placeholder, content)
 
-    # 7. Protect YAML keys in frontmatter or YAML files (e.g. "title: ")
+    # 7. Protect YAML URL and file path values (frontmatter and data files)
+    URL_KEYS_PATTERN = r'(?:url|link|linktree|href|src|photo|headerphoto|headerimg|image|letaceklink|prehledinformacilink|pdf|file|path|registration|registrationsheet|abstracturl|ctaurl|facebook|instagram|ig|twitter|youtube|yt|linkedin|discord|website|redirect_url)'
+    FILE_EXT_PATTERN = r'\.(?:pdf|webp|png|jpe?g|svg|html?|csv|ttf|woff2?|gif|ico)(?:[?#][^\s"\']*)?'
+
+    def protect_yaml_url_val(m):
+        idx = len(placeholders)
+        placeholders.append(m.group(3))
+        return f"{m.group(1)}{m.group(2)}__SAFE_PLACEHOLDER_{idx}__{m.group(4)}"
+
+    # a) Match by known URL/path key names
+    content = re.sub(
+        rf'(^[ \t]*(?:-\s*)?{URL_KEYS_PATTERN}\s*:\s*)(["\']?)(.*?)(["\']?\s*(?:#.*)?$)',
+        protect_yaml_url_val,
+        content,
+        flags=re.MULTILINE | re.IGNORECASE
+    )
+
+    # b) Match generic values starting with '/' or ending with file extension in YAML
+    def protect_generic_path(m):
+        val = m.group(3)
+        if val.startswith('/') or re.search(FILE_EXT_PATTERN, val, re.IGNORECASE):
+            idx = len(placeholders)
+            placeholders.append(val)
+            return f"{m.group(1)}{m.group(2)}__SAFE_PLACEHOLDER_{idx}__{m.group(4)}"
+        return m.group(0)
+
+    content = re.sub(
+        r'(^[ \t]*(?:-\s*(?:[a-zA-Z0-9_-]+\s*:\s*)?|[a-zA-Z0-9_-]+\s*:\s*))(["\']?)(.*?)(["\']?\s*(?:#.*)?$)',
+        protect_generic_path,
+        content,
+        flags=re.MULTILINE
+    )
+
+    # 8. Protect YAML keys in frontmatter or YAML files (e.g. "title: ")
     def protect_yaml_key(m):
         idx = len(placeholders)
         placeholders.append(m.group(1))
         return f"__SAFE_PLACEHOLDER_{idx}__{m.group(2)}"
-    content = re.sub(r'(^[ \t]*[a-zA-Z0-9_-]+:)(\s+)', protect_yaml_key, content, flags=re.MULTILINE)
+    content = re.sub(r'(^[ \t]*(?:-\s*)?[a-zA-Z0-9_-]+:)(\s+)', protect_yaml_key, content, flags=re.MULTILINE)
 
-    # 8. Apply typography fix to all remaining text
+    # 9. Apply typography fix to all remaining text
     content = fix_prepositions(content)
 
-    # 9. Restore placeholders in reverse order
+    # 10. Restore placeholders in reverse order
     for idx in range(len(placeholders) - 1, -1, -1):
         content = content.replace(f"__SAFE_PLACEHOLDER_{idx}__", placeholders[idx])
 
