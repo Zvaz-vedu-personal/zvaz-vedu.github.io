@@ -10,8 +10,8 @@ headerText: "Zvaž vědu! se rozšiřuje do Liberce!"
 headerPhoto: "/media/imgs/gallery/plzen25/ZVP_132334.webp"
 
 bentoBoxes:
-  - "participants_count"
   - "past_feedback"
+  - "participants_count"
   - "speakers_count"
 
 events: "0"
