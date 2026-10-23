@@ -274,7 +274,7 @@ html, body {
 <body>
   <div class="container">
     <h1>LOSOVÁNÍ VÝHERCŮ</h1>
-    <h2>Zvaž vědu! Brno 2026</h2>
+    <h2>Zvaž vědu! Liberec 2026</h2>
 
     <label class="file-input" id="file-section">
       <span style="font-size:1.2em;">📁 Nahrajte CSV soubor se jmény</span>
@@ -298,6 +298,7 @@ html, body {
   <script>
     let vsechna_jmena = [];
     let dostupna_jmena = [];
+    let vyherci = [];
     let animating = false;
 
     function parseCSV(text) {
@@ -341,10 +342,10 @@ function extractNamesFromCSVRows(rows) {
   const header = rows[0].map(h => h.trim().replace(/^"|"$/g, ''));
   console.log("Hlavička CSV:", header);
 
-  // TADY JE TA ZMĚNA: Vždy bereme první sloupec (index 0) bez ohledu na název
-  const nameCol = 0;
+  // Vždy bereme druhý sloupec (index 1) bez ohledu na název
+  const nameCol = 1;
 
-  console.log("Beru data ze sloupce s indexem:", nameCol);
+  console.log("Beru data z druhého sloupce (index 1):", nameCol);
 
   const names = [];
 
@@ -363,7 +364,7 @@ function extractNamesFromCSVRows(rows) {
     }
   }
 
-  console.log("✅ Načtená jména z prvního sloupce:", names);
+  console.log("✅ Načtená jména z druhého sloupce:", names);
   return names;
 }
 
@@ -390,66 +391,74 @@ function extractNamesFromCSVRows(rows) {
     }
 
     function animateRoulette(names, winner, callback) {
-    const strip = document.getElementById('name-strip');
-    strip.innerHTML = '';
+      const strip = document.getElementById('name-strip');
+      strip.innerHTML = '';
 
-    // 1) Sestavíme základní "proud" jmen (opakování pro efekt)
-    const base = [];
-    for (let i = 0; i < 6; i++) base.push(...names); // šest opakování -> dostatečná délka
+      const winnerNorm = winner.trim().toLowerCase();
+      // Striktní filtrace: v pásu nesmí být aktuální vítěz ANI žádný z předchozích výherců
+      let safeNames = names.filter(n => {
+        const norm = n.trim().toLowerCase();
+        return norm !== winnerNorm && !vyherci.some(v => v.trim().toLowerCase() === norm);
+      });
 
-    // 2) Rozhodneme, kde vložíme vítěze (nikoli na konec)
-    //    umístíme ho do zhruba 40-60% délky proudu (trochu náhodně)
-    const insertPos = Math.floor(base.length * (0.4 + Math.random() * 0.2));
+      if (safeNames.length === 0) {
+        safeNames = names.filter(n => n.trim().toLowerCase() !== winnerNorm);
+      }
+      if (safeNames.length === 0) {
+        safeNames = ["Zvaž vědu!"];
+      }
 
-    // 3) Zkopírujeme pole a vložíme vítěze do středu
-    const all = base.slice();
-    all.splice(insertPos, 0, winner);
+      // 1) Sestavíme základní "proud" jmen (opakování pro efekt)
+      const base = [];
+      for (let i = 0; i < 6; i++) base.push(...safeNames);
 
-    // 4) Přidáme ještě několik položek PO vítězi, aby bylo za ním co animovat
-    //    vezmeme náhodné (možná opakující se) položky z 'names'
-    const afterCount = Math.min(8, names.length * 2); // kolik položek za vítězem (max 8)
-    const afterNames = sampleArray(names.concat(names), afterCount); // zdroj může obsahovat duplikáty
-    all.push(...afterNames);
+      // 2) Rozhodneme, kde vložíme vítěze (nikoli na konec)
+      //    umístíme ho do zhruba 40-60% délky proudu (trochu náhodně)
+      const insertPos = Math.floor(base.length * (0.4 + Math.random() * 0.2));
 
-    // 5) Vytvoříme DOM elementy
-    all.forEach(name => {
+      // 3) Zkopírujeme pole a vložíme vítěze do středu (bude na celém pásu garantovaně JEDINÝ!)
+      const all = base.slice();
+      all.splice(insertPos, 0, winner);
+
+      // 4) Přidáme ještě několik položek PO vítězi, aby bylo za ním co animovat
+      const afterCount = Math.min(8, safeNames.length * 2);
+      const afterNames = sampleArray(safeNames.concat(safeNames), afterCount);
+      all.push(...afterNames);
+
+      // 5) Vytvoříme DOM elementy
+      all.forEach(name => {
         const div = document.createElement('div');
         div.className = 'name-item';
         div.textContent = name;
         strip.appendChild(div);
-    });
+      });
 
-    // 6) Výpočty pro animaci (stejné principy jako dříve)
-    const winnerPos = insertPos; // pozice vítěze v 'all'
-    const itemWidth = 320; // přibližně šířka položky + mezera (uplatni svůj CSS)
-    const containerWidth = document.getElementById('roulette-container').offsetWidth;
-    const start = containerWidth / 2;
-    strip.style.transform = `translateX(${start}px)`;
-    strip.style.transition = 'none';
+      // 6) Výpočty pro animaci
+      const winnerPos = insertPos;
+      const itemWidth = 320;
+      const containerWidth = document.getElementById('roulette-container').offsetWidth;
+      const start = containerWidth / 2;
+      strip.style.transform = `translateX(${start}px)`;
+      strip.style.transition = 'none';
 
-    // 7) Animace: nejdřív dlouhé přejíždění, potom "bounce" do přesného umístění
-    setTimeout(() => {
-        // náhodný menší offset pro přirozenost
+      // 7) Animace: nejdřív dlouhé přejíždění, potom "bounce" do přesného umístění
+      setTimeout(() => {
         const randomOffset = (Math.random() * 200) - 100;
         const rough = -winnerPos * itemWidth + containerWidth / 2 - itemWidth / 2 + randomOffset;
         strip.style.transition = 'transform 12s cubic-bezier(0.02, 0.8, 0.1, 0.99)';
         strip.style.transform = `translateX(${rough}px)`;
 
         setTimeout(() => {
-        // jemné doladění (bounce) — posun tak, aby byl vítěz přesně uprostřed
-        const center = containerWidth / 2 - (winnerPos * itemWidth + (itemWidth/2));
-        strip.style.transition = 'transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
-        strip.style.transform = `translateX(${center}px)`;
+          const center = containerWidth / 2 - (winnerPos * itemWidth + (itemWidth/2));
+          strip.style.transition = 'transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+          strip.style.transform = `translateX(${center}px)`;
 
-        setTimeout(() => {
-            // zvýraznit vítěze
+          setTimeout(() => {
             if (strip.children[winnerPos]) strip.children[winnerPos].classList.add('winner');
-
-            // počkejme, aby se animace projevila, potom zavolej callback
             setTimeout(callback, 2500);
-        }, 800);
+          }, 800);
         }, 12000);
-    }, 100);
+      }, 100);
     }
 
     function createConfetti() {
@@ -471,6 +480,9 @@ function extractNamesFromCSVRows(rows) {
 
     function losovat() {
       if (animating || dostupna_jmena.length === 0) {
+        if (dostupna_jmena.length === 0) {
+          alert("Všichni účastníci ze seznamu již byli vylosováni!");
+        }
         console.warn("⛔️ Nelze losovat – žádná dostupná jména nebo probíhá animace.");
         return;
       }
@@ -483,13 +495,32 @@ function extractNamesFromCSVRows(rows) {
       winnerDisplay.style.display = 'none';
       container.style.display = 'block';
 
+      // 1. Náhodný výběr vítěze z dosud nevylosovaných
       const idx = Math.floor(Math.random() * dostupna_jmena.length);
-      const winner = dostupna_jmena.splice(idx, 1)[0];
-      const animNames = sampleArray(vsechna_jmena, Math.min(15, vsechna_jmena.length));
+      const winner = dostupna_jmena[idx];
+
+      // 2. Odstraníme VŠECHNY výskyty tohoto výherce z dostupných jmen (aby nemohl vyhrát znovu ani při duplikátech v CSV)
+      const winnerNorm = winner.trim().toLowerCase();
+      dostupna_jmena = dostupna_jmena.filter(n => n.trim().toLowerCase() !== winnerNorm);
+      vyherci.push(winner);
+
+      // 3. V ruletě smí kroužit POUZE lidé, kteří dosud NEVYHRÁLI (z dostupna_jmena)
+      let fillerPool = dostupna_jmena.filter(n => n.trim().toLowerCase() !== winnerNorm);
+
+      // Záložní varianta, pokud už v soutěži zbývá méně než 2 lidi
+      if (fillerPool.length === 0) {
+        fillerPool = vsechna_jmena.filter(n => n.trim().toLowerCase() !== winnerNorm && !vyherci.some(v => v.trim().toLowerCase() === n.trim().toLowerCase()));
+      }
+      if (fillerPool.length === 0) {
+        fillerPool = ["Zvaž vědu!"];
+      }
+
+      const animNames = sampleArray(fillerPool, Math.min(15, fillerPool.length));
 
       console.log(`🏁 LOSOVÁNÍ:`);
       console.log(`🎉 Vítěz: ${winner}`);
-      console.log(`👥 Zbývá ${dostupna_jmena.length} lidí:`, dostupna_jmena);
+      console.log(`🏆 Dosavadní výherci (${vyherci.length}):`, vyherci);
+      console.log(`👥 Zbývá ${dostupna_jmena.length} nevylosovaných lidí:`, dostupna_jmena);
 
       animateRoulette(animNames, winner, () => {
         setTimeout(() => {
@@ -514,6 +545,7 @@ function extractNamesFromCSVRows(rows) {
       const rows = parseCSV(text);
       vsechna_jmena = extractNamesFromCSVRows(rows);
       dostupna_jmena = vsechna_jmena.slice();
+      vyherci = [];
       document.getElementById('file-section').style.display = 'none';
       document.getElementById('main-content').style.display = 'block';
       showPreview();
