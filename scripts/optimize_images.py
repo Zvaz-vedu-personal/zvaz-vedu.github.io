@@ -66,12 +66,15 @@ def process_file_worker(args_tuple):
 
     src_size = file_path.stat().st_size
 
-    all_exist = True
-    for label in sizes:
-        out_path = file_path.with_name(f"{file_path.stem}-{label}.webp")
-        if not out_path.exists():
-            all_exist = False
-            break
+    output_specs = []
+    if file_path.suffix.lower() != ".webp":
+        output_specs.append(("original", None, file_path.with_suffix(".webp")))
+    output_specs.extend(
+        (label, max_dim, file_path.with_name(f"{file_path.stem}-{label}.webp"))
+        for label, max_dim in sizes.items()
+    )
+
+    all_exist = all(out_path.exists() for _, _, out_path in output_specs)
 
     current_hash = None
     if not force and all_exist:
@@ -82,6 +85,8 @@ def process_file_worker(args_tuple):
         current_hash = h.hexdigest()
         
         if current_hash == cached_hash:
+            if not dry_run and file_path.suffix.lower() != ".webp":
+                file_path.unlink()
             return file_path_str, current_hash, 0, 1, 0, None
 
     if current_hash is None:
@@ -91,11 +96,6 @@ def process_file_worker(args_tuple):
                 h.update(chunk)
         current_hash = h.hexdigest()
 
-    variants_to_generate = []
-    for label, max_dim in sizes.items():
-        out_path = file_path.with_name(f"{file_path.stem}-{label}.webp")
-        variants_to_generate.append((label, max_dim, out_path))
-
     try:
         with Image.open(file_path) as raw_img:
             img = ImageOps.exif_transpose(raw_img)
@@ -103,13 +103,14 @@ def process_file_worker(args_tuple):
 
             created = 0
             msg_list = []
-            for label, max_dim, out_path in variants_to_generate:
+            for label, max_dim, out_path in output_specs:
                 if dry_run:
-                    msg_list.append(f"  [DRY-RUN] {file_path.name} -> {out_path.name} (max {max_dim}px)")
+                    size_description = "original size" if max_dim is None else f"max {max_dim}px"
+                    msg_list.append(f"  [DRY-RUN] {file_path.name} -> {out_path.name} ({size_description})")
                     created += 1
                     continue
 
-                if orig_w <= max_dim and orig_h <= max_dim:
+                if max_dim is None or (orig_w <= max_dim and orig_h <= max_dim):
                     resized = img.copy()
                 else:
                     resized = resize_image(img, max_dim)
@@ -124,6 +125,10 @@ def process_file_worker(args_tuple):
                 savings = (1 - (out_size / src_size)) * 100 if src_size > 0 else 0
                 msg_list.append(f"  [OK] {file_path.name} -> {out_path.name} [{save_img.width}x{save_img.height}, {out_size // 1024} KB, -{savings:.1f}%]")
                 created += 1
+
+            if not dry_run and file_path.suffix.lower() != ".webp":
+                file_path.unlink()
+                msg_list.append(f"  [DELETED] {file_path.name}")
 
             return file_path_str, current_hash, created, 0, 0, "\n".join(msg_list)
     except Exception as e:
@@ -184,7 +189,7 @@ def optimize_directory(base_dir: Path, sizes: dict, quality: int, force: bool, d
 def main():
     parser = argparse.ArgumentParser(description="Optimalizátor obrázků pro Zvaž vědu!")
     parser.add_argument("--dir", type=str, default="static/media/imgs", help="Cílová složka")
-    parser.add_argument("--quality", type=int, default=82, help="WebP kvalita")
+    parser.add_argument("--quality", type=int, default=85, help="WebP kvalita")
     parser.add_argument("--workers", type=int, default=None, help="Počet procesů")
     parser.add_argument("--force", action="store_true", help="Vynutit přegenerování")
     parser.add_argument("--dry-run", action="store_true", help="Pouze zobrazí")

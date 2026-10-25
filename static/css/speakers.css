@@ -232,7 +232,9 @@
 /* Grouped Checkbox Styles */
 #location-brno, 
 #location-praha, 
-#location-plzeň {
+#location-plzeň,
+#location-české-budějovice,
+#location-liberec {
     appearance: none;
     /* Ensures background is visible against the checkbox border in both color schemes */
     background-color: var(--background); 
@@ -254,12 +256,16 @@
 }
 #location-brno:checked, 
 #location-praha:checked, 
-#location-plzeň:checked {
+#location-plzeň:checked,
+#location-české-budějovice:checked,
+#location-liberec:checked {
     border-color: var(--accent);
 }
 #location-brno::before, 
 #location-praha::before, 
-#location-plzeň::before {
+#location-plzeň::before,
+#location-české-budějovice::before,
+#location-liberec::before {
     content: "";
     width: 0.8125em; 
     height: 0.8125em; 
@@ -271,7 +277,9 @@
 }
 #location-brno:checked::before, 
 #location-praha:checked::before, 
-#location-plzeň:checked::before {
+#location-plzeň:checked::before,
+#location-české-budějovice:checked::before,
+#location-liberec:checked::before {
     transform: scale(1);
 }
 
