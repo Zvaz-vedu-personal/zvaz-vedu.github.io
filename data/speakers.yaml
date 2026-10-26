@@ -19,6 +19,7 @@
     youtube: https://youtu.be/Da3-AOuQbGM?si=BsgRsVGzuyVRaKyt
   - title: 'Život ve vesmíru? Napříč prázdnotou vstříc zázraku přírody'
     youtube: https://youtu.be/Ddb82O6I13s
+  - title: 'Elektromagnetické spektrum: Univerzální klíč k pochopení vesmíru'
   contact:
     instagram: https://www.instagram.com/jan.herzig//
     linkedin: https://www.linkedin.com/in/jan-herzig-372a46316/
@@ -239,6 +240,7 @@
   locations:
   - Plzeň
   - Brno
+  - České Budějovice
   lectures:
   - title: Logická olympiáda
     youtube: https://www.youtube.com/watch?v=eMoqD_RhvM8&list=PL1NMrPWjk08Rn13vSeaHO_CmUaAQz60Ti&index=8
@@ -246,6 +248,7 @@
     youtube: https://www.youtube.com/watch?v=jgRuSHghZN4&list=PL1NMrPWjk08TqugSEkfgSzry_AjJ-T_cN&index=8
   - title: 'Se slunečními skvrnami a umělou inteligencí až do Indie'
     youtube: 'https://youtu.be/l0FIV3xb0-g?si=hq9NYvdC2fvWzIb7'
+  - title: 'Aplikace neuronových sítí ve sluneční astronomii, aneb kde dnes není AI?'
   contact: {}
   bio: Eda je studentem Fakulty aplikovaných věd ZČU. Zajímá se o matematiku, fyziku,
     astronomii a programování. V roce 2024 se stal nejúspěšnějším autorem práce SOČ
@@ -489,9 +492,12 @@
   locations:
   - Plzeň
   - Liberec
+  - České Budějovice
   lectures:
   - title: 'Česká cesta do vesmíru: Od beztížných kadetů po družice'
     youtube: https://youtu.be/jUvfzBMHgP8?si=dmGnUXrwmovT9A8b
+  - title: 'Generace Artemis: Proč bude tvoje příští brigáda ve vesmíru?'
+  - title: 'Jak určit polohu pomocí signálů z tisíců kilometrů vzdálených družic?'
   contact:
     instagram: https://www.instagram.com/julie_beritova/
     linkedin: https://www.linkedin.com/in/julie-beritová-4b332035b/
@@ -717,6 +723,8 @@
   photo: "/media/imgs/speakers/barbora-skyvova.webp"
   locations:
   - České Budějovice
+  lectures:
+  - title: 'Věda proti alternativnímu léčitelství: dezinformace jako hrozba pro zdraví'
   bio: Barča je studentkou Přírodovědecké fakulty Masarykovy Univerzity. Zajímá se o biologii, chemii i vše mezi tím. Se svou prací se zúčastnila konference FEBS3+ Meeting, SOČ i dalších soutěží a akcí, včetně olympiád a popularizačních přednášek. Je také držitelkou stříbrného ocenění DofE. Věnuje se organizaci chemického semináře KSICHT a mimo vědeckou sféru píše YA fantasy knihy. Ve volném čase ráda čte a chodí na procházky do přírody.
   contact:
     instagram: https://www.instagram.com/barbora_skyvova/
@@ -726,6 +734,8 @@
   photo: "/media/imgs/speakers/marketa-zmatlova.webp"
   locations:
   - České Budějovice
+  lectures:
+  - title: 'Co s čistírenskými kaly? Výzkum jako sidequest a mnohem víc'
   bio: Markéta je studentkou Gymnázia v Třebíči. V roce 2024 se začala věnovat výzkumu, který se zabývá čistírenskými kaly jako potenciálním hnojivem. S touto prací získala 1. místo v SOČ a ocenění NF Jaroslava Heyrovského. Mimo vědu ji baví horolezení, hraje na housle a dělá táborovou vedoucí. Ráda fotí, a to i experimentálně s vlastnoručně vyrobeným foťákem z krabičky od sirek, přičemž si filmy sama vyvolává.
   contact:
     instagram: https://www.instagram.com/zmatlova.m/
@@ -734,6 +744,8 @@
   photo: "/media/imgs/speakers/erik-sedlacek.webp"
   locations:
   - České Budějovice
+  lectures:
+  - title: 'Proč jsi závislý: dopamin a pasti moderního světa'
   bio: Erik je studentem Gymnázia Česká v Českých Budějovicích a zajímá se o biochemii a neurovědy. Absolvuje odbornou stáž na Ústavu organické chemie a biochemie AV ČR, kde zpracovává svou SOČ. Vedle vědy se aktivně podílí na organizaci kulturních akcí – působí jako vedoucí marketingu Budějovického Majálesu a je absolventem Young Creators Akademie v rámci projektu Evropského hlavního města kultury ČB 2028.
   contact:
     instagram: https://www.instagram.com/los3rikos/
@@ -742,6 +754,8 @@
   photo: "/media/imgs/speakers/ludmila-kozlova.webp"
   locations:
   - České Budějovice
+  lectures:
+  - title: 'Sprosté slovo nebo příležitost? Proč (ne)dokážeme skousnout změnu klimatu'
   bio: Lidu studuje na ČAGu v Českých Budějovicích a věnuje se ochraně životního prostředí. Tvoří výukové materiály zaměřené na ekopsychologii a roli jednotlivce ve společenské změně. Za své aktivity, včetně iniciování Studentského otevřeného dopisu proti popírání vědy, získala Cenu Josefa Vavrouška. Několik let se závodně věnovala atletice a je mistryní ČR v chůzi. Baví ji také hudba, žurnalistika a cizí jazyky.
   contact:
     instagram: https://www.instagram.com/lidu.27/
@@ -750,6 +764,8 @@
   photo: "/media/imgs/speakers/jakub-holecek.webp"
   locations:
   - České Budějovice
+  lectures:
+  - title: 'Skutečný vzhled buněk: Aneb když zjednodušená schémata z učebnic nestačí'
   bio: Kuba se zajímá o buněčnou biologii a pomocí mikroskopie se snaží ukázat, že realita uvnitř buněk je mnohem zajímavější než schémata v učebnicích. Mimo laboratoř se věnuje výuce první pomoci, pro kterou vytvořil vlastní příručku. Když zrovna nikoho neučí zachraňovat životy, tráví čas aktivně sportem – od tenisu až po windsurfing. Rád propojuje vědecké poznatky s praktickým pochopením světa kolem nás.
   contact:
     instagram: https://www.instagram.com/_jakub_holecek_/
@@ -758,6 +774,8 @@
   photo: "/media/imgs/speakers/jachym-buben.webp"
   locations:
   - České Budějovice
+  lectures:
+  - title: 'Bude teda fúze do dvaceti let a jak se vlastně zkoumá?'
   bio: Jáchym studuje Gymnázium Jana Nerudy v Praze a zajímá se o fyzikální simulace částic a plazmatu. Od roku 2022 spolupracuje s Ústavem fyziky plazmatu AV ČR na modelu SPICE, za což získal několik ocenění. Zároveň je členem výzkumného týmu na ÚTEF ČVUT, kde se věnuje simulacím částicových detektorů. Mimo svět rovnic a simulací se věnuje triatlonu a jakémukoliv kolektivnímu sportu, který může podniknout s dobrou partou.
   contact:
     instagram: https://www.instagram.com/jachymbuben/
@@ -767,12 +785,16 @@
   photo: "/media/imgs/speakers/jan-toman.webp"
   locations:
   - České Budějovice
+  lectures:
+  - title: 'Jak ochočit exoskeleton, aneb trnitá cesta technického projektu.'
   bio: Jára a Jenda studují Masarykovo gymnázium v Plzni a jsou to zapálení kutilové se zájmem o motory, 3D tisk a mechanismy. Se svým mechanickým ovladačem na bagry vyhráli národní kolo Samsung Solve for Tomorrow a postoupili do celoevropského finále. Pravidelně se umísťují na předních příčkách vědeckých konferencí. Baví je dotahovat technické nápady do konce, i kdyby mělo jít o montování bramborového děla.
 
 - name: Jaroslav Kudrna
   photo: "/media/imgs/speakers/jaroslav-kudrna.webp"
   locations:
   - České Budějovice
+  lectures:
+  - title: 'Jak ochočit exoskeleton, aneb trnitá cesta technického projektu.'
   bio: Jára a Jenda studují Masarykovo gymnázium v Plzni a jsou to zapálení kutilové se zájmem o motory, 3D tisk a mechanismy. Se svým mechanickým ovladačem na bagry vyhráli národní kolo Samsung Solve for Tomorrow a postoupili do celoevropského finále. Pravidelně se umísťují na předních příčkách vědeckých konferencí. Baví je dotahovat technické nápady do konce, i kdyby mělo jít o montování bramborového děla.
   contact:
     instagram: https://www.instagram.com/jara_kudrna/
@@ -781,6 +803,8 @@
   photo: "/media/imgs/speakers/stepan-latislav.webp"
   locations:
   - České Budějovice
+  lectures:
+  - title: 'Jak létat v interiéru bez GPS: let dronem bez lokačních systémů'
   bio: Štěpán studuje na SPŠ SE v Českých Budějovicích a působí jako vývojář. Zaměřuje se na nízkoúrovňové programování, webové aplikace a kyberbezpečnost, ve které úspěšně soutěží v rámci CTF turnajů. V dlouhodobé spolupráci s Přírodovědeckou fakultou Jihočeské univerzity vyvíjí letové algoritmy pro autonomní drony. Jeho cílem je řešit komplexní technologické problémy elegantním a efektivním kódem.
   contact:
     instagram: https://www.instagram.com/stepa.l02/
@@ -790,9 +814,11 @@
   photo: "/media/imgs/speakers/nikolas-pippal.webp"
   locations:
   - Plzeň
+  - Praha
   lectures:
   - title: Síla a moc aplikované matematiky
     youtube: https://www.youtube.com/watch?v=ioyomuRd9TE
+  - title: 'Od výzkumu přehřívání měst ke startupu s reálným dopadem'
   contact:
     instagram: https://www.instagram.com/nik_pippal/
     website: ''
@@ -805,100 +831,136 @@
   locations:
   - Praha
   - Liberec
+  lectures:
+  - title: 'Proč se léčiva zaseknou aneb role mucinů ve střevním hlenu'
   bio: Áďa je studentka septimy Gymnázia Doctrina v Liberci. Je nadšená do přírodních věd, baví ji bádat v laboratoři a šťourat se do všeho, do čeho se šťourat lze. Nejraději má biologii a biochemii, ale nepohrdne ani astronomií či fyzikou. Vědu ji baví nejen dělat, ale i ve velké míře popularizovat a “vykládat o ní všem, koho to zajímá”. Se svým biochemickým projektem reprezentovala Česko na mezinárodní soutěži Regeneron ISEF 2026. Ve volném čase ráda kouká na Star Wars.
 
 - name: Lucie Ovčačíková
   photo: "/media/imgs/speakers/lucie-ovcacikova.webp"
   locations:
   - Praha
+  lectures:
+  - title: 'Když se cyklus uzavře; stabilita v chemii i mimo ni'
   bio: Lucka je absolventkou šestileté anglické sekce Gymnázia Olomouc-Hejčín. Ve škole ji nejvíce fascinuje chemie a biologie, kterým se věnuje i ve svém výzkumu zaměřeném na cyklizaci peptidů. S projektem uspěla v soutěžích SOČ a Konference mladých přírodovědců a letos reprezentovala Českou republiku na mezinárodním finále Regeneron ISEF. Po prázdninách se ponoří do studia všeobecného lékařství na Masarykově univerzitě. Ve volném čase ráda tráví čas s kamarády a sportuje.
 
 - name: Jonathan Skrla
   photo: "/media/imgs/speakers/jonathan-skrla.webp"
   locations:
   - Praha
+  lectures:
+  - title: 'Kvantové počítače: Revoluce, hrozba, nebo jen další hype?'
 
 - name: Daniel Biskup
   photo: "/media/imgs/speakers/daniel-biskup.webp"
   locations:
   - Praha
   - Liberec
+  lectures:
+  - title: 'Jak určit polohu pomocí signálů z tisíců kilometrů vzdálených družic?'
+  - title: 'Start Artemis II: Výprava k Měsíci očima kadetů České cesty do vesmíru'
   bio: Dana odmalička zajímá vesmír. Prošel výběrovým řízením Zero-G, díky kterému zažil stav beztíže a dostal se do komunity velmi inspirativních lidí. Zažil v rámci české výpravy start rakety SLS na misi Artemis II a to ho pouze utvrdilo v jeho životním snu - stát se astronautem. O vesmíru přednáší na školách, veřejných akcích a v tomto oboru se dál vzdělává, třeba i formou stáží na Akademii věd ČR. Aktivně běhá, leze, plave, cestuje a miluje adrenalinové výzvy.
 
 - name: Jonáš Neruda
   photo: "/media/imgs/speakers/jonas-neruda.webp"
   locations:
   - Praha
+  lectures:
+  - title: 'Start Artemis II: Výprava k Měsíci očima kadetů České cesty do vesmíru'
   bio: Jonáš je studentem Gymnázia Josefa Jungmanna v Litoměřicích a od dětství ho fascinuje vesmír. V roce 2025 zažil stav beztíže v rámci projektu Zero-G a stal se ambasadorem České cesty do vesmíru. Na jaře 2026 měl možnost sledovat start mise Artemis II přímo z mysu Canaveral na Floridě. Svůj kosmický zájem se snaží všemožně propagovat nejen mezi svými vrstevníky, protože věří, že vesmír baví.
 
 - name: Daniel Jokl
   photo: "/media/imgs/speakers/daniel-jokl.webp"
   locations:
   - Praha
+  lectures:
+  - title: 'Horor jménem lobotomie : Jak věda napravuje své omyly'
   bio: Dan je absolventem Masarykova gymnázia v Plzni. Již řadu let se intenzivně zajímá o medicínu, neurovědu a biomedicínský výzkum. Je pravidelným účastníkem neurovědeckých a chirurgických kongresů a během studia absolvoval stáže v institucích, jako jsou Neurochirurgická klinika ÚVN, Poliklinika na Národní, NTC, RNB či IKEM, kde měl možnost poznat moderní medicínu i klinický výzkum z bezprostřední blízkosti. Součástí jeho studijní cesty byl také roční stipendijní pobyt na gymnáziu v Německu, který mu umožnil získat mezinárodní zkušenosti a rozšířit si pohled na vzdělávání i vědu. Ve volném čase se věnuje anatomické kresbě a několika sportům. 
 
 - name: Kristýna Říhová
   photo: "/media/imgs/speakers/kristyna-rihova.webp"
   locations:
   - Praha
+  lectures:
+  - title: 'Projekt Fluoronet: Proč bychom se měli zajímat o oceány i v ČR?'
 
 - name: Matěj Dvořák
   photo: "/media/imgs/speakers/matej-dvorak.webp"
   locations:
   - Praha
+  lectures:
+  - title: 'Od snu pochopit vesmír ke stipendiu a studiu v zahraničí'
   bio: Matěj je student fyziky na univerzitě ETH Zürich. Zkušenosti z praxe v CERNu ho utvrdily v tom, že se chce věnovat vědě a studovat fungování vesmíru. Ve studiu ho finančně podporuje nadace Kellner Family Foundation. Má rád hory, lezení, snowboarding a cestování. V létě ho můžete potkat jako vedoucího dětských táborů.
 
 - name: Leonard Walletzký
   photo: "/media/imgs/speakers/leonard-walletzky.webp"
   locations:
   - Praha
+  lectures:
+  - title: 'Nemusíš v tom mít jasno! Moje králičí nora plná autismu a divadla'
   bio: Leonard je studentem Harvardovy univerzity, kde studuje neurovědy a divadlo. Velmi ho baví říkat tuto kombinaci a zmást tak všechny v okolí dvou kilometrů. Od svých 16 let se věnuje výzkumu autismu, se kterým stále pokračuje. S ním se zúčastnil soutěží, jako jsou SOČ, České hlavičky a Regeneron ISEF v USA. Mimo akademické prostředí se věnuje divadlu a tanci – na Harvardu choreografoval 2 muzikály a příští rok bude režírovat muzikál Ride the Cyclone.
 
 - name: Vojtěch Mikeš
   photo: "/media/imgs/speakers/vojtech-mikes.webp"
   locations:
   - Liberec
+  lectures:
+  - title: 'Relativita v číslech: Jak se využívá numerika v relativitě'
   bio: Vojta je studentem prvního ročníku fyziky na MFF UK a věnuje se převážně numerické astrofyzice. V minulém roce se ve spolupráci s FZU AV ČR podílel na simulacích RPS algoritmů a v nynějším roce ve spolupráci s Universita di Genoa pracuje na numerickém přístupu k řešení perturbačních rovnic neutronových hvězd. Zároveň soutěžil v SOČ na celostátní úrovni a baví jej soutěže v astrofyzice.
 
 - name: Jakub Novák
   photo: "/media/imgs/speakers/jakub-novak.webp"
   locations:
   - Liberec
+  lectures:
+  - title: 'SpaceX v garáži: Jak si na střední postavit vlastní raketu'
   bio: Jakub je bakalářským studentem na ČVUT FEL. Fascinuje ho cokoliv, co jezdí nebo létá rychle, ať už jde o Formuli 1, letadla nebo rakety. Jeho životním cílem je pomoci s návratem lidstva na Měsíc. K tomu směřuje přes stavbu amatérských raket, se kterými v týmu Space Carrots nedávno vyhrál národní finále soutěží ESA CanSat i CRC26. Mimo to založil vlastní startup, vyvíjel antény pro projekt LASAR a popularizuje vědu v rámci Expedice Mars. Když zrovna nic nestaví, leze po horách a plní sidequesty.
 
 - name: Michal Ditrych
   photo: "/media/imgs/speakers/michal-ditrych.webp"
   locations:
   - Liberec
+  lectures:
+  - title: 'Válka uvnitř mozku: co když buňka změní pravidla?'
   bio: Michala od malička fascinovalo, jak funguje svět kolem nás. Na Gymnáziu Jiřího Ortena se jeho zvědavost proměnila ve vášeň pro biologii a chemii, která ho dovedla až na stáž do Národního ústavu pro výzkum rakoviny, kde zpracoval svou SOČ. Dnes studuje na Farmaceutické fakultě Univerzity Karlovy a nejvíc ho zajímá molekulární biologie a účinky různých látek. Když zrovna nezkoumá, co se děje na buněčné úrovni, rád zamíří do posilovny, pátrá po dalších vědeckých zajímavostech nebo si pustí jeho oblíbený seriál.
 
 - name: Johana Cupáková
   photo: "/media/imgs/speakers/johana-cupakova.webp"
   locations:
   - Liberec
+  lectures:
+  - title: 'Bojíš se udělat chybu? Co s námi dělá strach v matematice'
   bio: Johana chodí do čtvrtého ročníku Krkonošského gymnázia. Zajímá ji především psychologie, ale baví ji také statistika, práce s daty a poznávání toho, jak lidé přemýšlejí a učí se. Se svou prací o prožívání chyb v matematice zvítězila v celostátním kole SOČ. Když se zrovna nevěnuje škole, ráda běhá a čte. V budoucnu by se chtěla tomuto směru věnovat i při vysokoškolském studiu.
 
 - name: Jiří Hroch
   photo: "/media/imgs/speakers/jiri-hroch.webp"
   locations:
   - Liberec
+  lectures:
+  - title: 'Ostrovy bez moře? Když se z měsíční krajiny stane laboratoř přírody'
   bio: Jiří Hroch je studentem Gymnázia Mánesova v Sokolově, který propadl nadšení pro biologii. Fascinuje ho vše, co se týče interakcí živého světa s neživým. Jeho nejoblíbenějším tématem však zůstává biologie v postindustriálním prostředí. Každoročně se účastní soutěží Biologická a Ekologická olympiáda a se svou prací o karlovarských lomech soutěžil v SOČ. Účastní se i různých přednáškových akcí (setkání přátel přírody Karlovarska) a věnuje se i focení a mapování ohrožených druhů, které jsou kolem nás.
 
 - name: Hana Partelová
   photo: "/media/imgs/speakers/hana-partelova.webp"
   locations:
   - Liberec
+  lectures:
+  - title: 'Bug v časoprostoru: Jak gravitace mění pravidla hry'
   bio: Hanka je studentkou španělského gymnázia. Nejvíc ji baví hledat odpovědi na otázky, které na první pohled nemají jednoduché řešení. Zajímá se o obecnou relativitu, astrofyziku, kvantové technologie a kosmonautiku. Ve Slovenské akademii věd zkoumá kauzální strukturu sféricky symetrického časoprostoru. Zároveň pracuje ve firmě Spacemanic jako AIT inženýrka na vývoji a integraci družic. Ve volném čase ráda hraje na housle, jezdí na koni a střílí z luku.
 
 - name: Václav Šustr
   photo: "/media/imgs/speakers/vaclav-sustr.webp"
   locations:
   - Liberec
+  lectures:
+  - title: 'Jak ubastlit částicový detektor na koleni? Aneb jak přinutit krystal, čipy a lepší arduino měřit neviditelné záření.'
   bio: Václav Šustr studuje mikroelektroniku na FEKT VUT v Brně. Baví ho elektronika, fyzika a stavění vlastních měřicích přístrojů. Za svůj SiPM gama spektrometr získal 2. místo v celostátním kole SOČ. Ve volných chvílích se věnuje běhání a astrofotografii.
 
 - name: Anna Šťastná
   photo: "/media/imgs/speakers/anna-stastna.webp"
   locations:
   - Liberec
+  lectures:
+  - title: 'Tajemství jednoho pole: Jak mikroklima ovlivňuje schopnost rostlin žít'
   bio: Anna je studentkou 4. ročníku Gymnázia Mimoň a život na venkově v ní od dětství probudil hluboký zájem o přírodu, sport a myslivost. Své vědecké ambice začala rozvíjet na stáži v Botanickém ústavu AV ČR a zúročila je ve vlastním výzkumu pšenice ozimé v rámci SOČ. Věnovala se také dlouhodobému seberozvoji a absolvovala všechny úrovně Mezinárodní ceny vévody z Edinburghu (DofE).
+
 

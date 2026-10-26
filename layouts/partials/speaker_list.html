@@ -31,9 +31,13 @@
                     <ul class="speaker-lectures">
                         {{ range $lecture := $speaker.lectures }}
                             <li>
-                                <a href="{{ $lecture.youtube }}" target="_blank">
+                                {{ if $lecture.youtube }}
+                                    <a href="{{ $lecture.youtube }}" target="_blank">
+                                        {{ $lecture.title }}
+                                    </a>
+                                {{ else }}
                                     {{ $lecture.title }}
-                                </a>
+                                {{ end }}
                             </li>
                         {{ end }}
                     </ul>
