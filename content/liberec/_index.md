@@ -19,7 +19,7 @@ participants: "300+"
 speakers: "10"
 
 maxParticipants: "300"
-registration: "https://forms.gle/hgqAse6ir1YSEdUQ6"
+registration: false
 registrationSheet: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSIbGF9fO-s7cfWQQh4EGS5oWKeD7sQKTQZT6m0XRWYgTUzgkCoN09rVoqSLVhf6nDyfpZxDDIOabOH/pub?gid=678007510&single=true&output=csv"
 
 additionalInfo: true 

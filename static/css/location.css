@@ -737,6 +737,47 @@ h3::after {
 
 @media (max-width:1250px) {
     .header-graphics {
+        --photo-size: 300px;
+        --photo-right: 30px;
+        --photo-top: -110px;
+        --cat-size: 240px;
+        --cat-offset-x: 119px;
+        --cat-offset-y: 117px;
+    }
+    .header-graphics-photo {
+        right: var(--photo-right);
+        width: var(--photo-size);
+        height: var(--photo-size);
+        top: var(--photo-top);
+    }
+    .header-graphics-logo {
+        width: var(--cat-size);
+        height: auto;
+        right: calc(var(--photo-right) + var(--photo-size) - var(--cat-offset-x));
+        top: calc(var(--photo-top) - var(--cat-offset-y));
+        transform: rotate(-80deg);
+        z-index: 3;
+    }
+}
+
+@media (max-width:1050px) {
+    .header-graphics {
+        --photo-size: 275px;
+        --photo-right: -1rem;
+        --photo-top: -95px;
+    }
+}
+
+@media (max-width:960px) {
+    .header-graphics {
+        --photo-size: 240px;
+        --photo-right: -32px;
+        --photo-top: -80px;
+    }
+}
+
+@media (max-width:900px) {
+    .header-graphics {
         display: none;
     }
 }
