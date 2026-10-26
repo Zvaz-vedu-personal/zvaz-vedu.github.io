@@ -122,6 +122,7 @@ nav .layout-content {
     flex-direction: row !important;
     align-items: center !important;
     gap: 1.2rem !important;
+    transform: translateY(2.5px);
 }
 .nav-cities-row:has(> :nth-child(6)) {
     display: grid !important;
@@ -130,6 +131,7 @@ nav .layout-content {
     column-gap: 1.1rem !important;
     row-gap: 0.3rem !important;
     align-items: center !important;
+    transform: none !important;
 }
 .nav-city-link {
     text-decoration: none;
@@ -794,10 +796,12 @@ footer,
     }
     .nav-cities-row {
         gap: 0.85rem !important;
+        transform: translateY(1.5px);
     }
     .nav-cities-row:has(> :nth-child(6)) {
         column-gap: 0.85rem !important;
         row-gap: 0.25rem !important;
+        transform: none !important;
     }
     .nav-city-link {
         font-size: 1rem;
@@ -820,10 +824,12 @@ footer,
     }
     .nav-cities-row {
         gap: 0.65rem !important;
+        transform: translateY(0.5px);
     }
     .nav-cities-row:has(> :nth-child(6)) {
         column-gap: 0.65rem !important;
         row-gap: 0.2rem !important;
+        transform: none !important;
     }
     .nav-city-link {
         font-size: 0.88rem;
