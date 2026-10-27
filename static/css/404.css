@@ -1,0 +1,68 @@
+/* 404 */
+
+#not-found.layout-container {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+#not-found .layout-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 3rem;
+    row-gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.not-found-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    max-width: 640px;
+}
+
+.not-found-code {
+    font-family: 'ZV-Display';
+    font-size: 8rem;
+    line-height: 8rem;
+    color: var(--primary);
+}
+
+.not-found-text {
+    max-width: 52ch;
+}
+
+.not-found-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-top: 1rem;
+}
+
+.not-found-link {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+    transition: var(--transition);
+}
+.not-found-link:hover {
+    color: var(--primary);
+}
+
+.not-found-img {
+    width: 260px;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .not-found-code {
+        font-size: 5rem;
+        line-height: 5rem;
+    }
+    .not-found-img {
+        width: 180px;
+    }
+}

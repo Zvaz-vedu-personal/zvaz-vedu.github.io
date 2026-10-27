@@ -1,0 +1,27 @@
+{{define "styles"}}
+    <link rel="stylesheet" href="/css/404.css">
+{{end}}
+
+{{define "main"}}
+    <section class="layout-container" id="not-found">
+        <div class="layout-content">
+            <div class="not-found-body">
+                <p class="not-found-code">404</p>
+                <h1>Tuhle stránku jsme nenašli.</h1>
+                <p class="not-found-text">Adresa, kterou jsi zadal, neexistuje nebo byla přesunuta. Zkus to znovu z hlavní stránky, nebo se podívej na některou z našich sekcí.</p>
+                <a href="/" class="primary-button">Zpět na úvod</a>
+                <div class="not-found-links">
+                    <a href="/o-nas" class="not-found-link">O nás</a>
+                    <a href="/o-nas/recnici" class="not-found-link">Řečníci</a>
+                    <a href="/media" class="not-found-link">Média</a>
+                    <a href="/partneri" class="not-found-link">Partneři</a>
+                    <a href="/kontakt" class="not-found-link">Náš tým</a>
+                </div>
+            </div>
+            <picture>
+                <source srcset="/media/imgs/base/kocka_dira-white.webp" media="(prefers-color-scheme: dark)">
+                <img class="not-found-img" src="/media/imgs/base/kocka_dira-black.webp" alt="">
+            </picture>
+        </div>
+    </section>
+{{end}}
