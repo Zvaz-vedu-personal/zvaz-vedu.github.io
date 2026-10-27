@@ -399,10 +399,6 @@
                 "photo" "/media/imgs/gallery/brno26/ZVB_084003.webp"
             )
         }}
-        {{ if site.Data.offers }}
-            {{ $allOffers = site.Data.offers }}
-        {{ end }}
-
         {{/* Determine removed keys */}}
         {{ $removedKeys := slice }}
         {{ with $infoMap.remove }}
