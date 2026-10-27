@@ -25,7 +25,7 @@ registrationSheet: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSIbGF9fO-s7
 additionalInfo: true 
 letacekLink: /pdf/ZV_Liberec_letak.pdf
 
-showHistory: false
+showHistory: true
 
 team: [áďa, honza, tomáš, michal]
 partners: [tul, liberecky-kraj, nadace-jablotron, nadace-preciosa, drylock, eserocz-cz]
