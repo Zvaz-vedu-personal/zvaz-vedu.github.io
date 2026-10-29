@@ -3,7 +3,7 @@ title: Zvaž vědu! Plzeň
 layout: location
 
 headerTitle: "v Plzni"
-location: FAV v Plzni
+location: FAV v Plzni
 headerPhoto: "/media/imgs/locations/plzen-header.webp"
 
 <!-- joinUs: http --> 
