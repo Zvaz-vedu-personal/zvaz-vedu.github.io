@@ -25,7 +25,7 @@
         
         {{/* ITERUJEME PŘES VŠECHNA JMÉNA */}}
         {{ range $index, $trimmedName := $speakerNames }}
-            {{ $speakerData := index (where $.Site.Data.speakers "name" $trimmedName) 0 }}
+            {{ $speakerData := index (where hugo.Data.speakers "name" $trimmedName) 0 }}
 
             {{/* Pokud najdeme data pro řečníka, zobrazíme kartu */}}
             {{ if $speakerData }}

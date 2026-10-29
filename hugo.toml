@@ -1,6 +1,7 @@
 baseURL = 'https://zvazvedu.cz/'
-languageCode = 'cs-cz'
+locale = 'cs-cz'
 title = 'Zvaž vědu!'
+disableKinds = ['taxonomy', 'term']
 uglyURLs = false
 enableEmoji = true
 [params]

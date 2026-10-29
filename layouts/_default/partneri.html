@@ -48,7 +48,7 @@
         {{- $supporters := slice -}}
         
         {{/* We range directly over the list to preserve YAML order */}}
-        {{- range .Site.Data.partners -}}
+        {{- range hugo.Data.partners -}}
             {{- if ne (default true .showOnPartnersPage) false -}}
                 {{- if eq .type "generalni-partner" -}}
                     {{- $generals = $generals | append . -}}

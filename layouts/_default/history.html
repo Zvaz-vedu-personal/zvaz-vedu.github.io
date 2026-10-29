@@ -23,7 +23,7 @@
             
             <div class="history-line-bg"></div>
 
-            {{ $sorted := sort .Site.Data.cards "date" "desc" }}
+            {{ $sorted := sort hugo.Data.cards "date" "desc" }}
             {{ $groups := slice }}
             {{ $currentLabel := "" }}
             {{ $currentItems := slice }}

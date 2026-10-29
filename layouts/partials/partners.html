@@ -1,6 +1,6 @@
 {{/* 1. Extrakce parametrů */}}
 {{ $currentCity := trim (replace .Title "Zvaž vědu!" "") " " }}
-{{ $allPartners := $.Site.Data.partners }}
+{{ $allPartners := hugo.Data.partners }}
 
 {{/* 2. Detekce přepsání sekcí přes dedikovaný list (supporters / sponsors) */}}
 {{ $hasSupportersOverride := or (isset .Params "supporters") (isset .Params "sponsors") }}

@@ -9,11 +9,11 @@
 
     
     <!-- Participants -->
-    {{- if .Site.Data.testimonials.participants }}
+    {{- if hugo.Data.testimonials.participants }}
     <section class="testimonial-section participants-section">
       <h2 class="section-title"><span>Řekli o nás</span></h2>
       <div class="split-grid">
-        {{- range .Site.Data.testimonials.participants }}
+        {{- range hugo.Data.testimonials.participants }}
         <div class="testimonial-card participant">
           <p class="testimonial-text">"{{ .text }}"</p>
           <div class="testimonial-author">
@@ -42,12 +42,12 @@
     {{- end }}
 
     <!-- Orgs / Media -->
-    {{- if .Site.Data.testimonials.orgs }}
+    {{- if hugo.Data.testimonials.orgs }}
     <section class="testimonial-section orgs-section">
       <h2 class="section-title"><span>Napsali o nás</span></h2>
 
       <div class="split-grid">
-        {{- range .Site.Data.testimonials.orgs }}
+        {{- range hugo.Data.testimonials.orgs }}
             <div class="testimonial-card org">
                <a href="{{ .link}}" style="text-decoration: none">
                   <!-- TOP: quote -->

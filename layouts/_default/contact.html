@@ -28,7 +28,7 @@
                 <h3 id="{{ $teamName | urlize }}">{{ $teamName }}</h3>
 
                 {{/* Members Loop */}}
-                {{ range $member := site.Data.team }}
+                {{ range $member := hugo.Data.team }}
                     {{ $memberTeams := default slice $member.team }}
                     {{ if in $memberTeams $teamName }}
                         {{ $posIndex := -1 }}

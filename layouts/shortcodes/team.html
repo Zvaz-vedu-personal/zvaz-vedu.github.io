@@ -4,7 +4,7 @@
 
 <section class="layout-container">
     <div class="team-body">
-        {{ range .Site.Data.team }}
+        {{ range hugo.Data.team }}
             <div class="team-member">
                 <a href="/kontakt/#{{ .alias }}" class="team-member-link">
                     <div class="team-member-photo-container">

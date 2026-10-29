@@ -80,7 +80,7 @@
         <section class="layout-container" id="accomplishments">
             <div class="layout-content bento-board">
                 {{range .Params.bentoBoxes}}
-                    {{$box := index site.Data.bento_boxes .}}
+                    {{$box := index hugo.Data.bento_boxes .}}
                     {{if $box}}
                         <div class="bento-board-item" {{with $box.color}}style="background-color: var(--{{.}});"{{end}}>
                             {{if eq $box.type "stats"}}

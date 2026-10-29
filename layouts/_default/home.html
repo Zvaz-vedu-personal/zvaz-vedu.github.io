@@ -35,7 +35,7 @@
             <div class="carousel-container">
                 <div class="carousel-viewport">
                     <div class="carousel-track" id="aktualne-track">
-                        {{ range first 5 (sort (where (where .Site.Data.cards "type" "update") "hidden" "!=" true) "date" "desc") }}
+                        {{ range first 5 (sort (where (where hugo.Data.cards "type" "update") "hidden" "!=" true) "date" "desc") }}
                             <div class="carousel-card">
                                 <i class="{{ .icon }}"></i>
                                 <h4>{{ .title }}</h4>

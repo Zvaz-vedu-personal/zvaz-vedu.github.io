@@ -1,5 +1,5 @@
 <div id="speakers-container">
-    {{ range $speaker := .Site.Data.speakers }}
+    {{ range $speaker := hugo.Data.speakers }}
         
         {{ $speakerName := lower $speaker.name }}
         {{ $speakerId := $speakerName | urlize }}
