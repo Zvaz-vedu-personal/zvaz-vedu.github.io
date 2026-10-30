@@ -1,3 +1,26 @@
+- date: 2026-10-30
+  type: update
+  icon: "fa-solid fa-user-plus"
+  title: "Registrace na Plzeň v plném proudu"
+  description: "Již 4. Zvaž vědu! v Plzni se uskuteční v pátek 27. a sobotu 28. listopadu na FAV v Plzni. Přihlášky jsou v plném proudu! Neváhej a zajisti si své místo co nejdříve."
+  link:
+    url: "/registrace/"
+    text: "Registrace"
+
+- date: 2026-11-27
+  type: event
+  title: Zvaž vědu! Plzeň 2026
+  link:
+    url: "/plzen/"
+    text: O akci
+
+- date: 2026-10-23
+  type: event
+  title: Zvaž vědu! Liberec 2026
+  link:
+    url: "/liberec/"
+    text: O akci
+
 - date: 2026-09-28
   type: update
   icon: "fa-solid fa-user-plus"
@@ -24,6 +47,7 @@
   link:
     url: "/soustredeni-soc/"
     text: "Přečíst si report"
+
 - date: 2026-09-17
   type: update
   icon: "fa-solid fa-calendar"

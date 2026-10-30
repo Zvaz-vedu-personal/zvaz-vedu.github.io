@@ -3,10 +3,10 @@ title: "Registrace"
 layout: "registrace"
 heading: "Vyberte si akci pro registraci"
 options:
-  - title: "Zvaž vědu! Liberec"
-    text: "V pátek 23. října od 9 do 15 hodin v prostorách Technické univerzity v Liberci"
-    url: "https://forms.gle/hgqAse6ir1YSEdUQ6"
-    cityRef: "/liberec" # Jakmile bude vytvořena stránka liberec s registrationSheet, stačí odkomentovat
+#  - title: "Zvaž vědu! Liberec"
+#    text: "V pátek 23. října od 9 do 15 hodin v prostorách Technické univerzity v Liberci"
+#    url: "https://forms.gle/hgqAse6ir1YSEdUQ6"
+#    cityRef: "/liberec" # Jakmile bude vytvořena stránka liberec s registrationSheet, stačí odkomentovat
 
   - title: "Zvaž vědu! Plzeň"
     text: "V pátek 27. a v sobotu 28. listopadu od 9 do 15 hodin v prostorách Fakulty aplikovaných věd ZČU a TechToweru"
