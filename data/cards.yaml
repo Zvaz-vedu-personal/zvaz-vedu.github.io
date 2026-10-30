@@ -2,7 +2,7 @@
   type: update
   icon: "fa-solid fa-user-plus"
   title: "Registrace na Plzeň v plném proudu"
-  description: "Již 4. Zvaž vědu! v Plzni se uskuteční v pátek 27. a sobotu 28. listopadu na FAV v Plzni. Přihlášky jsou v plném proudu! Neváhej a zajisti si své místo co nejdříve."
+  description: "Již 4. Zvaž vědu! v Plzni se uskuteční v pátek 27. a sobotu 28. listopadu na FAV v Plzni. Přihlášky jsou v plném proudu! Neváhej a zajisti si své místo co nejdříve."
   link:
     url: "/registrace/"
     text: "Registrace"
